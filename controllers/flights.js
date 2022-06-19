@@ -8,11 +8,19 @@ function index(req, res){
             title: "All Flights"
         })
     })
+    .catch(err => {
+        console.log(error)
+        res.redirect('/')
+    })
 }
 
 function newFlight(req, res){
     res.render('flights/new', {
         title: "Add Flight"
+    })
+    .catch(err => {
+        console.log(err)
+        res.redirect('/')
     })
 }
 
@@ -21,10 +29,26 @@ function create(req, res){
     .then(flight => {
         res.redirect(`/flights/new`)
     })
+    .catch(err => {
+        console.log(err)
+        res.redirect('/')
+    })
+}
+
+function deleteFlight(req, res){
+    Flight.findByIdAndDelete(req.params.id)
+    .then(() => {
+        res.redirect('/flights')
+    })
+    .catch(err => {
+        console.log(err)
+        res.redirect('/')
+    })
 }
 
 export{
     newFlight as new,
     index,
-    create
+    create,
+    deleteFlight as delete
 }
