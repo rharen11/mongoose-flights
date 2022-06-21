@@ -49,6 +49,7 @@ function deleteFlight(req, res){
 function show(req, res){
     Flight.findById(req.params.id)
     .then(flight => {
+        console.log(flight)
         res.render('flights/show', {
             title: "Flight Details",
             flight: flight
@@ -85,6 +86,17 @@ function update(req, res){
     })
 }
 
+function createTicket(req, res){
+    Flight.findById(req.params.id)
+    .then(flight => {
+        flight.tickets.push(req.body)
+        flight.save()
+        .then(() => {
+            res.redirect(`/flights/${flight._id}`)
+        })
+    })
+}
+
 export{
     newFlight as new,
     index,
@@ -92,5 +104,6 @@ export{
     deleteFlight as delete,
     show,
     edit,
-    update
+    update,
+    createTicket
 }
