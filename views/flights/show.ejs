@@ -27,7 +27,8 @@
   method="POST"
 >
   <label for="content-textarea">Seat:</label>
-  <textarea name="seat" id="content-textarea"></textarea>
+  <input name="seat" required pattern="[A-F][1-9]\d?">
+  <!-- <textarea name="seat" id="content-textarea"></textarea> -->
   <label for="seat-select">Price:</label>
   <select name="price" id="price-select">
     <option value="1">1</option>
