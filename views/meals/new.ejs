@@ -4,17 +4,22 @@
 
 <main>
 	<h1><%= title %></h1>
-  <p>First, please check if meal is available from list:
+  <!-- <p>First, please check if meal is available from list:
     <select>
       <% meals.forEach(function(meal) { %>
         <option><%= meal.name %></option>
       <% }) %>
-    </select>
+    </select> -->
   </p>
   <form id="add-meal-form" action="/meals" method="POST">
     <label for="name-input">Dish:</label>
-    <input type="text" name="meal" id="name-input">
+    <input type="text" name="name" id="name-input">
     <button type="submit">Add Meal</button>
+    <h2>Available Meals:
+    <% meals.forEach(function(meal) { %>
+        <option><%= meal.name %></option>
+      <% }) %>
+    </h2>
   </form>
 </main>
 
