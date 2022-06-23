@@ -17,7 +17,8 @@
     <div>Departure: </div>
     <div><%= flight.departs %></div>
     <%# start meal list %>
-    <div>Meal Options:</div>
+    <br>
+    <div>Inflight Meal Options:</div>
     <ul>
       <% flight.meals.forEach(meal => { %>
         <li><%= meal.name %></li>
@@ -44,14 +45,13 @@
 >
   <label for="content-textarea">Seat:</label>
   <input name="seat" required pattern="[A-F][1-9]\d?">
-  <!-- <textarea name="seat" id="content-textarea"></textarea> -->
   <label for="seat-select">Price:</label>
   <select name="price" id="price-select">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5" selected>5</option>
+    <option value="50">$50 (coach)</option>
+    <option value="100">$100 (business)</option>
+    <option value="200">$200 (economy plus)</option>
+    <option value="300">$300 (first class)</option>
+    <option value="400" selected>$400 (first class priority)</option>
   </select>
   <button type="submit">Add Ticket</button>
 </form>
@@ -62,7 +62,7 @@
         <tr>
           <th>Date</th>
           <th>Seat</th>
-          <th>Price</th>
+          <th>Price (In USD)</th>
         </tr>
       </thead>
       <tbody>
