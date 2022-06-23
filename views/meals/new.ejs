@@ -15,11 +15,11 @@
     <label for="name-input">Dish:</label>
     <input type="text" name="name" id="name-input">
     <button type="submit">Add Meal</button>
-    <h2>Available Meals:
+    <p>Available Meals:
     <% meals.forEach(function(meal) { %>
         <option><%= meal.name %></option>
       <% }) %>
-    </h2>
+    </p>
   </form>
 </main>
 

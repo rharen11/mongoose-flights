@@ -1,8 +1,58 @@
 body {
+  background-color: #305F70;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+body > main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #99B0A8;
+  border: solid #364B44;
+  padding: 20px;
+}
+
+body > nav {
+  grid-area: nav;
+  font-size: large;
+  background-color: #3082BA;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px 0 30px;
+  border: solid #364B44;
+}
+
+nav > a {
+  margin: 20px;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: #F3ECFF;
+}
+
+nav > a:hover{
+  color: white;
+  background-color: #364B44;
+}
+
 a {
-  color: #00B7FF;
+  color: #F3ECFF;
+}
+
+body > main{
+  margin: 10px;
+}
+
+body > main a:hover{
+  color: white;
+  background-color: #364B44;
+}
+
+#new-form{
+  display: flex;
+  flex-direction: column;
+
 }

@@ -59,7 +59,7 @@ function show(req, res){
          meals: meals
             })
         })
-    })
+    }) 
     .catch(err => {
         console.log(err)
         res.redirect('/')
